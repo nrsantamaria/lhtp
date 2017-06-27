@@ -1,5 +1,5 @@
-class Chapter < ActiveRecord::Base
-  has_many :sections
+class Section < ActiveRecord::Base
+  belongs_to :chapter
   validates :name, :presence => true
   validates(:name, uniqueness: { case_sensitive: false })
   before_save(:upcase_first_letter)

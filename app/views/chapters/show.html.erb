@@ -1,5 +1,25 @@
 <h1><%= @chapter.name %></h1>
 
+<% if @chapter.sections.any? %>
+
+
+    <% @chapter.sections.each do |section| %>
+      <p>
+        (<%= section.week %>) <%= section.name %>
+        <%= link_to "Edit section", edit_chapter_section_path(@chapter, section) %>
+        <%= link_to "Delete section", chapter_section_path(@chapter, section),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </p>
+    <% end %>
+<% else %>
+  <p>There are no sections yet!</p>
+<% end %>
+
+<br>
+<%= link_to "Add a Section", new_chapter_section_path(@chapter)%>
+<br>
+
 <%= link_to "Edit this Chapter", edit_chapter_path(@chapter) %>
 <br>
 <%= link_to "Delete this Chapter", chapter_path(@chapter),
