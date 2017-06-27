@@ -2,14 +2,10 @@
 
 <% if @chapter.sections.any? %>
 
-
     <% @chapter.sections.each do |section| %>
       <p>
-        (<%= section.week %>) <%= section.name %>
-        <%= link_to "Edit section", edit_chapter_section_path(@chapter, section) %>
-        <%= link_to "Delete section", chapter_section_path(@chapter, section),
-                                 :data => {:confirm => "Are you sure?",
-                                                :method => "delete"} %>
+        (<%= section.week %>)
+        <%= link_to section.name, section_path(section) %>
       </p>
     <% end %>
 <% else %>
