@@ -14,7 +14,7 @@
 
 <%= link_to "Add a Lesson", new_section_lesson_path(@section)%>
 
-<%= link_to "Edit section", edit_section_path(@section) %>
+<%= link_to "Edit section", edit_chapter_section_path(@section) %>
 <%= link_to "Delete section", chapter_section_path(@section),
                          :data => {:confirm => "Are you sure?",
                                         :method => "delete"} %>
