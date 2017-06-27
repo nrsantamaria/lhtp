@@ -1,0 +1,6 @@
+<h1>Courses</h1>
+<% @chapters.each do |chapter| %>
+<p><%= link_to chapter.name, chapter_path(chapter) %></p>
+<% end %>
+
+<%= link_to "Create New Course", new_chapter_path %>
